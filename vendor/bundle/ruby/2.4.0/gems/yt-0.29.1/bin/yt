@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'yt'
+rescue LoadError
+  require 'rubygems'
+  require 'yt'
+end
+
+Yt.configuration.log_level = :debug
+id = ARGV[1] || 'BPNYv0vd78A'
+
+case ARGV[0]
+when 'info'
+  puts "Yt version #{Yt::VERSION}"
+  video = Yt::Video.new id: id
+  puts video.annotations.first.text
+when 'annotations'
+  video = Yt::Video.new id: id
+  count = video.annotations.size
+  puts "Video #{id} has #{count} #{'annotation'.pluralize count}"
+  video.annotations.each.with_index do |annotation, i|
+    puts "#{i+1}) #{annotation.text}"
+  end
+when 'video'
+  video = Yt::Video.new id: id
+  views = "#{video.view_count} #{'view'.pluralize video.view_count}"
+  likes = "#{video.like_count} #{'like'.pluralize video.like_count}"
+  puts "'#{video.title}' by #{video.channel_title} has #{views} and #{likes}"
+end

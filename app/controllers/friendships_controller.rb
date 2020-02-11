@@ -1,6 +1,7 @@
 class FriendshipsController < ApplicationController
     def create
-        @friendship = current_user.friendships.create!(friend_id: params[:friend_id])
+      @friendship = current_user.friends << User.find(params[:friend_id])
+        # @friendship = current_user.friendships.create!(friend_id: params[:friend_id])
         if @friendship.save
             flash[:notice] = "Added friend"
         else 

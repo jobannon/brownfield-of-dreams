@@ -1,0 +1,13 @@
+current directory: /Users/josho/turing/3module/projects/trytwo/vendor/bundle/ruby/2.4.0/gems/json-2.1.0/ext/json
+/Users/josho/.rbenv/versions/2.4.1/bin/ruby -I /Users/josho/.rbenv/versions/2.4.1/lib/ruby/site_ruby/2.4.0 -r ./siteconf20200210-33662-gfmk79.rb extconf.rb
+creating Makefile
+
+current directory: /Users/josho/turing/3module/projects/trytwo/vendor/bundle/ruby/2.4.0/gems/json-2.1.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/josho/turing/3module/projects/trytwo/vendor/bundle/ruby/2.4.0/gems/json-2.1.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/josho/turing/3module/projects/trytwo/vendor/bundle/ruby/2.4.0/gems/json-2.1.0/ext/json
+make "DESTDIR=" install
